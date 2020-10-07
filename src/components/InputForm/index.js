@@ -1,13 +1,26 @@
-import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import React, {useState} from 'react';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import styles from './InputForm.module.scss'
 
-const inputForm = () => {
+function InputForm ({callback}) {
+    
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [country, setCountry]=useState('')
+  const [message, setMessage] =useState('')
+
+  const saveValues=(values) =>{
+  setFullName(fullName)
+  console.log(fullName)
+  callback(values)
+  }
+
   return (
     <Form className={styles.container}>
       <FormGroup className={styles.item1}>
         <Label for="fullName">Nombre y apellido</Label>
-        <Input name="fullName" id="fullName" placeholder="Ingresa tu número completo" />
+        <Input name="fullName" id="fullName" placeholder="Ingresa tu nombre completo" />
       </FormGroup>
       <FormGroup className={styles.item2}>
         <Label for="email">Correo electrónico</Label>
@@ -25,20 +38,22 @@ const inputForm = () => {
         </Input>
       </FormGroup>
       <FormGroup className={styles.item5}>
-        <Label for="exampleText">Text Area</Label>
-        <Input type="textarea" name="text" id="exampleText" />
+        <Label for="message">Mensaje</Label>
+        <Input type="textarea" name="message" id="message" placeholder="Cuéntanos de tu proyecto o comentario"/>
       </FormGroup>
-
+    <div className={styles.item6} >
       <FormGroup check>
         <Label check>
           <Input type="checkbox" />{' '}
          No soy un robot
         </Label>
       </FormGroup>
-      <Button>Enviar</Button>
-      <p> </p>
+    </div>
+      <div className={styles.item7} >
+        <div><Button onClick={() => saveValues()} color="primary">Enviar</Button></div>
+      <p> Al dar click en el botón aceptas nuestra <a> Política de privacidad</a> </p>
+      </div>
     </Form>
   );
 }
-
-export default inputForm;
+export default InputForm

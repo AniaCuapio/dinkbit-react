@@ -11,18 +11,17 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText
   } from 'reactstrap';
 
-  import styles from './Header.module.scss'
-function Header (){
+  import styles from './BlogHeader.module.scss'
+function BlogHeader(){
     
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <div>
-        <Navbar color="light" light expand="md">
+        <div className={styles.container}>
+        <Navbar light expand="md">
           <NavbarBrand href="/">
             <img className={styles.logo} src="/logo-dinkbit-22.png" />
           </NavbarBrand>
@@ -57,14 +56,20 @@ function Header (){
               <NavItem>
                 <NavLink href="/components/">Contacto</NavLink>
               </NavItem>
-              <NavItem color="primary" >
+              <div className={styles.blog}>
+              <NavItem >
                 <NavLink href="/components/">Blog</NavLink>
               </NavItem>
+              </div>
             </Nav>
           </Collapse>
         </Navbar>
+        <div>
+          <p> BLOG </p>
+          <h1> Compartimos cosas increíbles</h1>
+        </div>
       </div>
     )
 }
 
-export default Header
+export default BlogHeader

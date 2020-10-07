@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import ContactForm from './screens/ContactForm'
+import Blog from './screens/Blog'
 
 function App() {
   return (
-    <ContactForm/>
+    <Blog/>
   );
 }
 
