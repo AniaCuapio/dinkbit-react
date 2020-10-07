@@ -10,7 +10,7 @@ import FooterForm from '../../components/FooterForm'
 
 //CSS and reactstrap
 import styles from './Blog.module.scss'
-import { Container, Row, Col  } from 'reactstrap';
+import { Container, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default function Blog (){
 
@@ -25,52 +25,19 @@ export default function Blog (){
           setEntries(posts)
           console.log(posts)
           console.log(entries)
-          /*let parsedPosts = [];
-         for (let key in data) {
-          let post = data[key];
-             post["key"] = key;
-          parsedPosts.push(post);
-           }
-            if (parsedPosts) {
-              setEntries(parsedPosts);
-            }
-            console.log(entries)
-           console.log(typeof(entries))*/
           } catch (e) {
             console.log(e)
           }
       }
 
-//      useEffect(() => {
-//        fetch("https://dinkbit-api-quick-gelada-ua.mybluemix.net/entries")
-//          .then((res) => res.json())
-//          .then((data) => {
-//            console.log(data);
-//            let parsedEntries = [];
-//            for (let key in data) {
-//              let post = data[key];
-//              post["key"] = key;
-//              parsedEntries.push(post);
-//            }
-//            if (parsedEntries) {
-//              setEntries(parsedEntries);
-//            console.log(entries)
-//            console.log(typeof(entries))
-//            }
-//          });
-//      }, []);
-    
-      /*const UICards = posts.map(
-        ({ _id, author, authorDescription, authorImage, authorPhrase, content, createdAt, imageurl, title}) => (
-          <Col key={_id}>
-           <BlogCard  title={title} content={content} createdAt={createdAt} imageurl={imageurl} author={author} />
-          </Col>
-       )
-        )   */
-
-        useEffect(()=>{
-          getEntries()
-        }, [])
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+    let randomNumber = getRandomInt(20)
+      
+    useEffect(()=>{
+      getEntries()
+    }, [])
 
 return (
     
@@ -79,26 +46,53 @@ return (
     <Container>
       <Row>
         <Col  sm="12" md="8"  >
-          {
-            entries.map( entry => <li>{entry.author}</li>)
+          {entries.map( entry =>
+          <>
+          <Col key={entry._id}>
+          <BlogCard  data={entry} />
+          </Col>
+          </>)
           }
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
         </Col >
         <Col className={styles.aside} md="4" >
+          <h6> Filtros</h6>
+        <Form>
+          <FormGroup check>
+            <Label check>
+            <Input type="checkbox" />{' '}
+              Check me out
+            </Label>
+            <Label check>
+            <Input type="checkbox" />{' '}
+              Check me out
+            </Label>
+            <Label check>
+            <Input type="checkbox" />{' '}
+              Check me out
+            </Label>
+            <Label check>
+            <Input type="checkbox" />{' '}
+              Check me out
+            </Label>
+            <Label check>
+            <Input type="checkbox" />{' '}
+              Check me out
+            </Label>
+            <Label check>
+            <Input type="checkbox" />{' '}
+              Check me out
+            </Label>
+          </FormGroup>
+        </Form>
+        <h2> Top 5 destacados</h2>
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+        {entries.map( entry =>
+          <li>
+            <h6> {entry.title} </h6>
+            <p>{entry.createdAt} - Lectura de {randomNumber} min</p>
+            <p> </p>
+            </li>)
+          }
           </ul>
         </Col>
       </Row>
