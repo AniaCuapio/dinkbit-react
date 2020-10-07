@@ -1,17 +1,7 @@
 import React, { useState } from 'react';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-  } from 'reactstrap';
+    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle,
+    DropdownMenu, DropdownItem, Container} from 'reactstrap';
 
   import styles from './BlogHeader.module.scss'
 function BlogHeader(){
@@ -21,10 +11,11 @@ function BlogHeader(){
 
     return (
         <div className={styles.container}>
-        <Navbar light expand="md">
+        <Navbar  expand="md">
           <NavbarBrand href="/">
-            <img className={styles.logo} src="/logo-dinkbit-22.png" />
+            <img className={styles.logo} src="/logo-dinkbit-22-white.png" />
           </NavbarBrand>
+          <div>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -63,11 +54,13 @@ function BlogHeader(){
               </div>
             </Nav>
           </Collapse>
+          </div>
         </Navbar>
-        <div>
+        <Container className={styles.textWrapper}>
           <p> BLOG </p>
-          <h1> Compartimos cosas increíbles</h1>
-        </div>
+          <h1> Compartimos</h1>
+          <h1> cosas increíbles</h1>
+        </Container>
       </div>
     )
 }

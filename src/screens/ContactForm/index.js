@@ -1,10 +1,16 @@
 import React from 'react'
-import FooterForm from '../../components/FooterForm'
+
+//components
 import Header from '../../components/Header'
 import InputForm from '../../components/InputForm'
-import { Container, Row, Col, Modal  } from 'reactstrap';
-import styles from './ContactForm.module.scss'
+import FooterForm from '../../components/FooterForm'
+
 import {addUserMessageService} from '../../services'
+
+//CSS and reactstrap
+import styles from './ContactForm.module.scss'
+import { Container, Row, Col, Modal  } from 'reactstrap';
+
 
 export default function ContactForm (){
     

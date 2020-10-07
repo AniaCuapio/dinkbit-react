@@ -1,39 +1,87 @@
-.newsletterContainer{
-    background-color: #0053f1;
-    height: 400px;
-    width: 100%;
-    display: flex;
-    align-items: stretch;
-    color: #fff;
-    padding: 10%;
-    .text{
-        width: 50%;
-        .input{
-            background-color: #0053f1;
-            color: #fff;
-            border:1px solid #fff;
-        }
-        .button{
-            background-color: #fff;
-            color: #0053f1;
-            padding: 10%;
-            border-radius: 1px;
-        }
-    }
-    .imagen{
-        width: 50%;
+
+
+.aside
+    {
+        display: none;
+    @media screen and (min-width: 768px) 
+    {
+        display: block;
     }
 }
 
 
+.newsletterContainer{
+    background-color: #0053f1;
+    width: 100%;
+    min-height: 400px;
+    color: #fff;
+    .text{
+        float: none !important;
+        padding: 10%;
+        h2{
+            font-size: 5rem;
+            font-weight: 700;
+        }       
+        .input{
+            background-color: transparent;
+            color: #fff;
+            border:1px solid #fff;
+            margin-bottom: 20px;
+            .icon{
+                filter: invert(100%);
+                width: 5%;
+                float: left;
+                margin: 10px;
+            }
+            p{
+                padding: 8px 5px 0px 5px;
+            }
+        }
+        button{
+            background-color: #fff;
+            color: #0053f1;
+            padding: 15px 50px;
+            font-weight: 600;
+            border: none;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+    }
+    .imagen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 50%;
+            display: none;
+            @media screen and (min-width: 768px) 
+            {
+                display: block;
+            }
+        }
+    }
+}
 
 .bottomContainer{
     background-color: #181818;
     background-image: url('/contacto-fondo-01-01.png');
     background-size: cover;
-    height: 400px;
+    background-repeat: no-repeat;
+    min-height: 400px;
     color: #fff;
-    .Button{
-        padding: 30%;
+    padding: 10%;
+    h2{
+        font-size: 5.5rem;
+        font-weight: 700;
+    }
+    button{
+        background-color: #018cf1;
+        color: #fff;
+        padding: 15px 50px;
+        font-weight: 600;
+        border: none;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
     }
 }
