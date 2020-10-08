@@ -7,8 +7,8 @@ import './App.scss';
 
 // Screens
 //import Blog from "./screens/Blog";
+
 //import Contact from "./screens/Contact";
-//import Home from './screens/Home'
 //import DetailView from './screens/Detail'
 import HomePage from './screens/Home'
 

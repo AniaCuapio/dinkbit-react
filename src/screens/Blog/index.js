@@ -20,7 +20,7 @@ export default function Blog (){
 
   const { url } = useRouteMatch();
 
-    const [entries, setEntries] = useState([])
+  const [entries, setEntries] = useState([])
 
     async function getEntries() {
         console.log('funciona')
@@ -45,7 +45,6 @@ export default function Blog (){
     }, [])
 
 return (
-    
     <>      
     <BlogHeader />
     <Container>
@@ -54,7 +53,9 @@ return (
           {entries.map( entry =>
           <>
           <Col key={entry._id}>
+          <Link to={`${url}/${entry._id}`}>
           <BlogCard  data={entry} />
+          </Link>
           </Col>
           </>)
           }
@@ -91,12 +92,15 @@ return (
         </Form>
         <h4> Top 5 destacados</h4>
         <ul>
-        {entries.map( entry =>
-          <li>
+        {entries.map( (entry) =>
+            (
+            <Link to={`${url}/${entry._id}`}>
+            <li>
             <h6> {entry.title} </h6>
             <p>{entry.createdAt} - Lectura de {randomNumber} min</p>
-            <p> </p>
-            </li>)
+            </li>
+            </Link>
+            ))
           }
           </ul>
         </Col>

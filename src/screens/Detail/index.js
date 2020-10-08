@@ -44,12 +44,11 @@ useEffect(() => {
     let {imageurl, title, createdAt, content, author, authorDescription, authorImage, authorPhrase  }=entry
 
     return (<>
-    
     <Header/>
     <Container className={styles.container}>
     <Row>
         <Col>
-        <a href='/Blog' > Regresar al Blog </a>
+        <Link to="/Blog"> Regresar al Blog </Link>
         <h1>{title}</h1>
         <div>
         <p>{createdAt}</p>
@@ -68,7 +67,6 @@ useEffect(() => {
             <p> {authorDescription} </p>
             <p> {authorPhrase} </p>
         </div>
-
         </Col>
     </Row>
     </Container>
