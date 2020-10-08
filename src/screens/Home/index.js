@@ -1,17 +1,15 @@
 import React, {useState, useEffect} from 'react'
 
-//components
+//Components
 import Header from '../../components/Header'
 import FooterForm from '../../components/FooterForm'
+import BottomContainer from '../../components/BottomContainer'
+import ClientCard from '../../components/ClientCard'
+import Slider from '../../components/Slider'
 
 //Styles & reactstrap
 import styles from './Home.module.scss'
 import { Container, Row, Col } from 'reactstrap';
-
-//Components
-import BottomContainer from '../../components/BottomContainer'
-import ClientCard from '../../components/ClientCard'
-import Slider from '../../components/Slider'
 
 export default function HomePage (){
 
@@ -128,7 +126,44 @@ useEffect(()=>{
     </div>
 
     <div  className={styles.seventhContainer} >
+    <Container>
+        <Row>
+            <Col className={styles.wrapper} >
+            <img alt="" width="50%" src="indicadores-17.svg" />
+            <h2>+600</h2>
+            <h4> Clientes que confían en nuestro trabajo </h4></Col>
+            <Col className={styles.wrapper}>
+            <img alt="" width="50%" src="indicadores-18.svg" />
+            <h2>+1000</h2>
+            <h4> Proyectos de marketing, desarrollo y diseño</h4></Col>
+            <Col className={styles.wrapper}>
+            <img alt="" width="50%" src="indicadores-19.svg" />
+            <h2>TOP #30</h2>
+            <h4> Posicionados como agencia de marketing en México </h4>
+            </Col>
+        </Row>
+        <Row>
+        <Col className={styles.title} >
+        <h2>Compartimos </h2>
+        <h2>lo que sabemos</h2>
+        </Col>
+        </Row>
+<Row>
+    <Col >
+        <img width="90%" src="/bottomCards.jpg"></img>
+    </Col>
+    </Row>
+    <Row>
+        <Col className={styles.buttonContainer} >
+            <div className={styles.button}> Ver más artículos </div>
+        </Col>
+    </Row>
+</Container>
     
+    
+
+    
+
     </div>
 
 <BottomContainer />

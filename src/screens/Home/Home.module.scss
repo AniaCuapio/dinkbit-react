@@ -188,9 +188,57 @@
             width: 400px;
         }
     }
+    .imagen{
+        display: none;
+        @media screen and (min-width: 768px) 
+        {
+            display: block;
+        }
+    }
 }
 
 .seventhContainer{
-    min-height: 400px;
+    min-height: 800px;
     width: 100vw;
+    text-align: center;
+    .wrapper{
+        margin-bottom: 10%;
+        h2{
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 5rem;
+            margin-bottom: 10%;
+            padding-top: 20%;
+        }
+        h4{
+            margin-bottom: 10%;
+            letter-spacing: 1px;
+            color: #838383;
+            font-size: 1.5rem;
+        }
+    }
+    .title{
+    margin-bottom: 10%;
+        h2{
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 5rem;
+        }
+    }
+
+    .buttonContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+        .button{
+            padding: 15px 50px;
+            font-weight: 600;
+            border: 2px solid black;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-top: 10%;
+            width: 300px;
+        }
+    }
 }
