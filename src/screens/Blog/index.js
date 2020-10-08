@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
+//Services
 import {getEntriesService} from '../../services'
-import BlogCard from '../../components/BlogCard'
+
+// RRD
+import { Link, useRouteMatch } from "react-router-dom";
 
 //components
 import BlogHeader from '../../components/BlogHeader'
+import BlogCard from '../../components/BlogCard'
 import BottomContainer from '../../components/BottomContainer';
 import FooterForm from '../../components/FooterForm'
 
@@ -14,8 +18,9 @@ import { Container, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default function Blog (){
 
-  const [entries, setEntries] = useState([])
+  const { url } = useRouteMatch();
 
+    const [entries, setEntries] = useState([])
 
     async function getEntries() {
         console.log('funciona')
@@ -45,7 +50,7 @@ return (
     <BlogHeader />
     <Container>
       <Row>
-        <Col  sm="12" md="8"  >
+        <Col  sm="12" md="9"  >
           {entries.map( entry =>
           <>
           <Col key={entry._id}>
@@ -54,8 +59,8 @@ return (
           </>)
           }
         </Col >
-        <Col className={styles.aside} md="4" >
-          <h6> Filtros</h6>
+        <Col className={styles.aside} md="3" >
+          <h4> Filtros</h4>
         <Form>
           <FormGroup check>
             <Label check>
@@ -84,7 +89,7 @@ return (
             </Label>
           </FormGroup>
         </Form>
-        <h2> Top 5 destacados</h2>
+        <h4> Top 5 destacados</h4>
         <ul>
         {entries.map( entry =>
           <li>

@@ -1,7 +1,33 @@
-.logo{
-    width: 20%;
-}
+.stickyNav{
+    position: fixed;
+    background-color: rgba($color: #fff, $alpha: 0.7);
+    z-index: 2;
+    width: 100%;
 
-.blog{
-    background-color: blue ;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        >div:last-child{
+            margin-right: 20px;
+        }
+        ul li{
+            padding: 0px 10px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            a{
+                color: rgba(34, 34, 34, 0.993);
+            }
+        }
+    }
+    .logo{
+    width: 200px;
+    }
+    .blog{
+    background-color: #018cf1;
+        a{
+        font-weight: 600;
+        color: #fff;
+        }
+    }
+
 }

@@ -11,21 +11,22 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText
   } from 'reactstrap';
 
   import styles from './Header.module.scss'
 function Header (){
-    
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <div>
-        <Navbar color="light" light expand="md">
+        <div className={styles.stickyNav}>
+        <Navbar  expand="md">
+          <div>
           <NavbarBrand href="/">
             <img className={styles.logo} src="/logo-dinkbit-22.png" />
           </NavbarBrand>
+          </div>
+          <div>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -57,11 +58,12 @@ function Header (){
               <NavItem>
                 <NavLink href="/components/">Contacto</NavLink>
               </NavItem>
-              <NavItem color="primary" >
+              <NavItem className={styles.blog} color="primary" >
                 <NavLink href="/components/">Blog</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
+          </div>
         </Navbar>
       </div>
     )

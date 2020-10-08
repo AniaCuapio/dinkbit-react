@@ -1,0 +1,76 @@
+.firstContainer{
+    background-image: url('/hero-home-01.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    p{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 9rem;
+        font-weight: 700;
+        line-height: 5rem;
+        letter-spacing: 1px;
+    }
+}
+.secondContainer{
+    min-height: 700px;
+    position: relative;
+    margin-bottom: 50px;
+    .imagen{
+        z-index: 1;
+        position: absolute;
+        top: -15%;
+        left: 15%;
+        img{
+            width: 400px;
+        }
+    }
+    .blackContainer{
+        background-color: #181818;
+        min-height: 800px;
+        width: 75%;
+        color: #fff;
+        float: right;
+        .text{
+            padding-left: 8%;
+            padding-top: 20%;
+            h4{
+                margin-bottom: 20%;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+            }
+
+            h2{
+                font-size: 5.5rem;
+                font-weight: 700;
+                line-height: 4rem;
+                margin-bottom: 10%;
+            }
+
+            p{
+                font-size: 1.1rem;
+                margin-bottom: 20%;
+                letter-spacing: 1px;
+            }
+            .button{
+                border: 2px solid #fff;
+                padding: 20px 100px;
+                width: fit-content;
+                font-weight: 800;
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+        }
+        
+    }
+}
+.thirdContainer{
+    min-height: 700px;
+
+}
+

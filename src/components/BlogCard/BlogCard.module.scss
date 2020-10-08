@@ -1,3 +1,13 @@
 .cardContainer{
     margin: 10%;
+    p{
+        color: #a3a3a3;
+    }
+    .authorContainer{
+        display: flex;
+        .authorName{
+            color: black;
+        }
+    
+    }
 }

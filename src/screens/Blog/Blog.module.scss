@@ -3,15 +3,30 @@
 .aside
     {
         display: none;
-
-
+        margin-top: 10%;
 
     @media screen and (min-width: 768px) 
     {
         display: block;
-
+    h4{
+        font-weight: 700;
+        margin: 20px;
+    }
+    h6{
+    font-weight: 600;
+    }
+    p {
+        color: #a3a3a3;
+    }
+    ul li{
+        list-style: none;
+    }
     Label {
         display: block;
+        margin: 10px;
+        :hover{
+            background-color: #0053f1;
+        }
     }
     }
 }
