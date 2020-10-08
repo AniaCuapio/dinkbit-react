@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 //Services
 import { getEntryService } from '../../services';
 
-//DRF
+//RRD
 import { Link, useParams } from "react-router-dom";
 
 //components
@@ -22,7 +22,6 @@ export default function DetailView (){
 
 const { id } = useParams();
 const [entry, setEntry] = useState({});
-
 
 useEffect(() => {
     getEntryService(id).then((data) => {

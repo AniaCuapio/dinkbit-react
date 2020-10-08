@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
+
+import {  BrowserRouter as Router, Switch,  Route,   Link, useParams} from "react-router-dom";
+
+import Blog from '../../screens/Blog'
+import HomePage from '../../screens/Home'
+import ContactForm from '../../screens/ContactForm'
+import DetailView from '../../screens/DetailView'
+
 import {
     Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle,
     DropdownMenu, DropdownItem, Container} from 'reactstrap';
 
-  import styles from './BlogHeader.module.scss'
+import styles from './BlogHeader.module.scss'
 function BlogHeader(){
-    
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
     return (
         <div className={styles.container}>
+        <Router>
         <Navbar  expand="md">
-          <NavbarBrand href="/">
+          <NavbarBrand>
             <img className={styles.logo} src="/logo-dinkbit-22-white.png" />
           </NavbarBrand>
           <div>
@@ -20,8 +28,8 @@ function BlogHeader(){
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Nosotros</NavLink>
-              </NavItem>
+                <NavLink >Nosotros</NavLink>
+               </NavItem>
              <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                 ¿Qué hacemos?
@@ -42,20 +50,29 @@ function BlogHeader(){
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink href="/components/">Proyectos</NavLink>
+                <NavLink>Proyectos</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Contacto</NavLink>
+                <NavLink>Contacto</NavLink>
               </NavItem>
               <div className={styles.blog}>
               <NavItem >
-                <NavLink href="/components/">Blog</NavLink>
+                <NavLink >Blog</NavLink>
               </NavItem>
               </div>
             </Nav>
           </Collapse>
           </div>
         </Navbar>
+        <Switch>
+          <Route path='/blog'  > <Blog /> </Route>
+          <Route path='/home'  > <HomePage /> </Route>
+          <Route path='/contact' > <ContactForm /> </Route>
+          <Route path='/detail' > <DetailView /> </Route>
+
+        </Switch>
+
+        </Router>
         <Container className={styles.textWrapper}>
           <p> BLOG </p>
           <h1> Compartimos</h1>

@@ -4,13 +4,14 @@ import React, { useEffect, useState } from 'react'
 import {getEntriesService} from '../../services'
 
 // RRD
-import { Link, useRouteMatch } from "react-router-dom";
-
+import {  BrowserRouter as Router, Switch,  Route,   Link, useParams} from "react-router-dom";
+ 
 //components
 import BlogHeader from '../../components/BlogHeader'
 import BlogCard from '../../components/BlogCard'
 import BottomContainer from '../../components/BottomContainer';
 import FooterForm from '../../components/FooterForm'
+import DetailView from '../DetailView'
 
 //CSS and reactstrap
 import styles from './Blog.module.scss'
@@ -18,7 +19,7 @@ import { Container, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default function Blog (){
 
-  const { url } = useRouteMatch();
+//const { url } = useRouteMatch(); useRouteMatch,
 
   const [entries, setEntries] = useState([])
 
@@ -44,19 +45,25 @@ export default function Blog (){
       getEntries()
     }, [])
 
+    //          <Link to={`${url}/${entry._id}`}>
+//          </Link>{`${entry._id}
+//          <Link to="/detail">
+
+
 return (
-    <>      
+    <>    
+    <Router>
     <BlogHeader />
     <Container>
       <Row>
         <Col  sm="12" md="9"  >
           {entries.map( entry =>
           <>
+          <Link to="/detail">
           <Col key={entry._id}>
-          <Link to={`${url}/${entry._id}`}>
           <BlogCard  data={entry} />
-          </Link>
           </Col>
+          </Link>
           </>)
           }
         </Col >
@@ -94,12 +101,10 @@ return (
         <ul>
         {entries.map( (entry) =>
             (
-            <Link to={`${url}/${entry._id}`}>
             <li>
             <h6> {entry.title} </h6>
             <p>{entry.createdAt} - Lectura de {randomNumber} min</p>
             </li>
-            </Link>
             ))
           }
           </ul>
@@ -120,6 +125,13 @@ return (
       <BottomContainer />
       </Container>
     <FooterForm />
+    <Switch>
+    <Route exact path="/detail">
+                <DetailView />
+          </Route>
+    </Switch>
+    </Router>  
+    
     </>
   )
 }

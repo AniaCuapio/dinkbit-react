@@ -6,25 +6,24 @@ import './App.scss';
 //import {Link, NavLink} from 'react-router-dom'
 
 // Screens
-//import Blog from "./screens/Blog";
+import Blog from "./screens/Blog";
 
-//import Contact from "./screens/Contact";
 //import DetailView from './screens/Detail'
-import HomePage from './screens/Home'
+//import HomePage from './screens/Home'
+//import ContactForm from '../src/screens/ContactForm'
+
 
 // Component
 //import Menu from "./components/Menu";
-
 //import Routes from './Routes';
 
 
 function App() {
   return (
    <>
-    <HomePage/> 
+    <Blog/>
   </>
   );
 }
 
 export default App;
-
